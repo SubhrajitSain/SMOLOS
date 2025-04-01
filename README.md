@@ -63,6 +63,11 @@ To build and run SMOLOS, follow these steps:
 3.  **Run SMOLOS in QEMU:**
 
     ```bash
+    make run
+    ```
+    or
+    
+    ```bash
     qemu-system-x86_64 -fda build/main_floppy.img
     ```
 
