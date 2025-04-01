@@ -46,6 +46,12 @@ $(BUILD_DIR)/tools/fat: always $(TOOLS_DIR)/fat/fat.c
 	$(CC) -g -o $(BUILD_DIR)/tools/fat $(TOOLS_DIR)/fat/fat.c
 
 #
+# Run
+#
+run:
+	qemu-system-x86_64 -fda $(BUILD_DIR)/main_floppy.img
+
+#
 # Always
 #
 always:
