@@ -54,8 +54,8 @@ directory_buffer:     times FAT12_SECTOR_SIZE db 0
 start:
     ; print initial messages
 
-    mov si, sym_space_nl
-    times 20 call puts
+    ;mov si, sym_space_nl
+    ;times 20 call puts
 
     mov si, sml_row1
     call puts
@@ -671,7 +671,7 @@ print_filesize:
 
 
 ; Data goes here
-sml_row1:       db " /#########\   /##      ##\  /#########\   ##          ", ENDL, 0
+sml_row1:       db " /#########\   /##     ##\   /#########\   ##          ", ENDL, 0
 sml_row2:       db " ##       ##   ## ## ## ##   ##       ##   ##          ", ENDL, 0
 sml_row3:       db " ##            ##   #   ##   ##       ##   ##          ", ENDL, 0
 sml_row4:       db " \#########\   ##       ##   ##       ##   ##          ", ENDL, 0
@@ -680,17 +680,17 @@ sml_row6:       db " ##       ##   ##       ##   ##       ##   ##       ##", END
 sml_row7:       db " \#########/   ##       ##   \#########/   \#########/", ENDL, ENDL, 0
 
 wlc_kernel_loaded: db "[  OK  ] Kernel loaded successfully without panicking.", ENDL, 0
-wlc_welcome:      db "[ INFO ] Welcome to SMOLOS! Use the `help` command to show all commands.", ENDL, ENDL, 0
+wlc_welcome:      db "[ INFO ] Welcome to SMOLOS! Use the `help` command to show all commands.", ENDL, 0
 
 ver_blr_version:  db "[ INFO ] Bootloader version - 5", ENDL, 0
 ver_knl_version:  db "[ INFO ] Kernel version    - 10", ENDL, 0
 
-crd_by:           db ENDL, "[ INFO ] SMOLOS by Subhrajit Sain (ANW), 2025", ENDL, 0
+crd_by:           db "[ INFO ] SMOLOS by Subhrajit Sain (ANW), 2025", ENDL, 0
 crd_github_repo:  db "[ INFO ] Github repo: https://github.com/SubhrajitSain/SMOLOS", ENDL, 0
 crd_website:      db "[ INFO ] Website: Soon maybe...", ENDL, 0
 crd_contrib:      db "[ INFO ] This OS is in need of contribution, and is under construction.", ENDL, ENDL, 0
 
-sym_prompt:       db '-> ', 0
+sym_prompt:       db '$ ', 0
 sym_dash:         db '-', 0
 sym_dot:          db '.', 0
 sym_space:        db ' ', 0
