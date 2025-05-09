@@ -249,6 +249,8 @@ start:
     jmp .prompt_reset
 
 .ls_command:
+    mov si, msg_wip
+    call puts
     call read_boot_sector
     cmp ax, 0
     je .ls_error
@@ -706,8 +708,9 @@ cmd_ls:           db 'ls', 0
 msg_help:         db "[ INFO ] Available commands: help, clear, reboot, halt, echo, version, ls", ENDL, 0
 msg_reboot:       db "[ INFO ] Rebooting...", ENDL, 0
 msg_halt:         db "[ INFO ] CPU fully halted. It is now safe to turn off your computer.", ENDL, 0
+msg_wip:          db "[ INFO ] This feature is work in progress, might not work as intended.", ENDL, 0
 
 err_unknown_cmd:  db "[ ERR! ] Unknown command! Use `help` to see a list of available commands.", ENDL, 0
 err_long_prompt:  db ENDL, "[ ERR! ] Prompt too long, try shortening it a bit.", ENDL, 0
 err_critical:     db "[ CRIT ] SMOLOS has encountered a critical issue. Press any key to restart.", 0
-err_disk_error:   db "[ ERR! ] Disk read error", ENDL, 0
+err_disk_error:   db "[ ERR! ] Disk read error!", ENDL, 0
