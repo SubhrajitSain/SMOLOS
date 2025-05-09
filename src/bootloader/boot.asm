@@ -363,9 +363,7 @@ disk_reset:
 ; Data
 ;
 
-; OK messages will get printed, but soon overwritten by the kernel.
-
-msg_loading:            db 'Knl ...', ENDL, 0 ; Kernel Loading...
+msg_loading:            db 'Knl LOAD', ENDL, 0 ; Kernel Loading...
 msg_read_success:       db 'Dsk OK!', ENDL, 0 ; Disk OK! (after disk check is successful)
 msg_kernel_ok:          db 'Knl OK!', ENDL, 0 ; Kernel OK! (after kernel is loaded fine)
 msg_read_failed:        db 'Dsk ERR', ENDL, 0 ; Disk ERROR! (after disk fails 5 times)
